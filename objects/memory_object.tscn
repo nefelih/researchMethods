@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cpsf53s2bu1pn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jofxq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_tvexu"]
+
+[node name="MemoryObject" type="Node3D" unique_id=1724018439 groups=["memory"]]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1967825252]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1361814800]
+shape = SubResource("SphereShape3D_jofxq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=20523514]
+mesh = SubResource("SphereMesh_tvexu")

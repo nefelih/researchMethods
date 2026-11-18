@@ -1,0 +1,10 @@
+acknowledgements
+
+thanks to...
+
+dither shader
+https://github.com/samuelbigos/godot_dither_shader
+https://github.com/cpt-metal/godot_dither_shader
+
+bayer matrix
+https://github.com/tromero/BayerMatrix
