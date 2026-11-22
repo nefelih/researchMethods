@@ -6,5 +6,5 @@ dither shader
 https://github.com/samuelbigos/godot_dither_shader
 https://github.com/cpt-metal/godot_dither_shader
 
-bayer matrix
+bayer matrix generation
 https://github.com/tromero/BayerMatrix

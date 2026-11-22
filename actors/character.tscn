@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://cq56usnsu754w"]
 
 [ext_resource type="Script" uid="uid://8t8pwcobtpto" path="res://actors/character.gd" id="1_dwr5h"]
+[ext_resource type="Texture2D" uid="uid://bsca2b0ipxdo2" path="res://assets/test_items/frolic.jpg" id="2_v8d33"]
+[ext_resource type="Texture2D" uid="uid://cdoorksp5m2de" path="res://assets/test_items/yay.jpg" id="2_yo2jm"]
+[ext_resource type="Texture2D" uid="uid://cnj2tj8gfyrlq" path="res://assets/test_items/guy.jpg" id="3_waij2"]
+[ext_resource type="Texture2D" uid="uid://bi3vn6mgm7qrl" path="res://assets/test_items/oh.jpg" id="4_dhxxy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvec7"]
 albedo_color = Color(0.6039216, 1, 1, 1)
@@ -10,10 +14,16 @@ material = SubResource("StandardMaterial3D_bvec7")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bvec7"]
 
-[node name="Character" type="CharacterBody3D" unique_id=723357428]
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3cqp"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bvec7"]
+
+[node name="Character" type="CharacterBody3D" unique_id=723357428 node_paths=PackedStringArray("possible_items")]
 script = ExtResource("1_dwr5h")
+possible_items = [NodePath("Item0"), NodePath("Item1"), NodePath("Item2"), NodePath("Item3")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1678139056]
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_bvec7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=214847507]
@@ -21,3 +31,39 @@ shape = SubResource("CapsuleShape3D_bvec7")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2020636423]
 transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0.7047428, 0.43559253)
+
+[node name="MemoryDetector" type="Area3D" parent="." unique_id=225224902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.17227459)
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MemoryDetector" unique_id=1569236036]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -0.42868656)
+shape = SubResource("BoxShape3D_p3cqp")
+
+[node name="Item0" type="Sprite3D" parent="." unique_id=681697005]
+transform = Transform3D(0.15, 0, 0, 0, 0.14772117, 0.026047232, 0, -0.026047232, 0.14772117, 0, 0.5, -1)
+visible = false
+texture = ExtResource("2_v8d33")
+
+[node name="Item1" type="Sprite3D" parent="." unique_id=1515320259]
+transform = Transform3D(0.2, 0, 0, 0, 0.19696155, 0.034729637, 0, -0.034729637, 0.19696155, 0, 0.5, -1)
+visible = false
+texture = ExtResource("3_waij2")
+
+[node name="Item2" type="Sprite3D" parent="." unique_id=1486243660]
+transform = Transform3D(0.3, 0, 0, 0, 0.29544234, 0.05209446, 0, -0.05209446, 0.29544234, 0, 0.5, -1)
+visible = false
+texture = ExtResource("4_dhxxy")
+
+[node name="Item3" type="Sprite3D" parent="." unique_id=616314118]
+transform = Transform3D(0.1, 0, 0, 0, 0.098480776, 0.017364819, 0, -0.017364819, 0.098480776, 0, 0.5, -1)
+visible = false
+texture = ExtResource("2_yo2jm")
+
+[node name="Backdrop" type="Sprite3D" parent="." unique_id=1993478472]
+transform = Transform3D(1000, 0, 0, 0, 984.80774, 173.6482, 0, -173.6482, 984.80774, 0, 1.4490218, -1.4389256)
+visible = false
+texture = SubResource("CanvasTexture_bvec7")
+
+[connection signal="body_entered" from="MemoryDetector" to="." method="_on_memory_detector_body_entered"]

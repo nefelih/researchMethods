@@ -1,9 +1,13 @@
-[gd_scene format=3 uid="uid://rsa1h4kwv25w"]
+[gd_scene format=4 uid="uid://rsa1h4kwv25w"]
 
 [ext_resource type="PackedScene" uid="uid://cq56usnsu754w" path="res://actors/character.tscn" id="1_g7g4h"]
-[ext_resource type="Shader" uid="uid://bjqyg5hl5ubco" path="res://global_scripts/shaders/test_scene.gdshader" id="2_j8ivh"]
+[ext_resource type="Shader" uid="uid://bjqyg5hl5ubco" path="res://globals/shaders/test_scene.gdshader" id="2_j8ivh"]
 [ext_resource type="Texture2D" uid="uid://ouir54lgatc0" path="res://assets/shaders/blue_noise/blue_noise.png" id="3_7ddre"]
 [ext_resource type="Texture2D" uid="uid://ck6jhxjewfn52" path="res://assets/shaders/color_palettes/1bit-monitor-glow-32x.png" id="3_nd71p"]
+[ext_resource type="Shader" uid="uid://d4h5fu557dwcd" path="res://globals/shaders/gradient.gdshader" id="4_qjeyg"]
+[ext_resource type="Texture2D" uid="uid://cnj2tj8gfyrlq" path="res://assets/test_items/guy.jpg" id="6_3qnke"]
+[ext_resource type="PackedScene" uid="uid://cpsf53s2bu1pn" path="res://objects/memory_object.tscn" id="7_wtsjf"]
+[ext_resource type="Texture2D" uid="uid://fxgpddbcrfpt" path="res://assets/memory_outline.png" id="8_rnaij"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g7g4h"]
 shader = ExtResource("2_j8ivh")
@@ -17,29 +21,53 @@ shader_parameter/u_dither_size = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_bvec7"]
 size = Vector3(10, 0.3, 10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bja7f"]
-albedo_color = Color(0.55828667, 0.55828655, 0.55828655, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnaij"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.39688927, 0.39688927, 0.39688924, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jofxq"]
-material = SubResource("StandardMaterial3D_bja7f")
+material = SubResource("StandardMaterial3D_rnaij")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jofxq"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_bvec7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s36qc"]
 albedo_color = Color(0.32941177, 0.7372549, 0.70980394, 1)
 
 [sub_resource type="PrismMesh" id="PrismMesh_bvec7"]
-material = SubResource("StandardMaterial3D_jofxq")
+material = SubResource("StandardMaterial3D_s36qc")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvexu"]
-albedo_color = Color(0.7546, 0.98, 0.93867666, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6qxox"]
+render_priority = 0
+shader = ExtResource("4_qjeyg")
+shader_parameter/light_color = Color(1, 1, 1, 1)
+shader_parameter/dark_color = Color(0.05, 0.05, 0.05, 1)
+shader_parameter/inner_radius = 0.0
+shader_parameter/outer_radius = 1.0
 
-[sub_resource type="SphereMesh" id="SphereMesh_jofxq"]
-material = SubResource("StandardMaterial3D_tvexu")
+[sub_resource type="SphereMesh" id="SphereMesh_qjeyg"]
+material = SubResource("ShaderMaterial_6qxox")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3cqp"]
-albedo_color = Color(1.92523e-07, 0.4251346, 0.42569143, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gthg3"]
+albedo_color = Color(4.235506e-06, 0.6781109, 0.6841189, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_tvexu"]
-material = SubResource("StandardMaterial3D_p3cqp")
+material = SubResource("StandardMaterial3D_gthg3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3xc6"]
+shading_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rnaij"]
+_surfaces = [{
+"aabb": AABB(-0.5288675, -0.5288675, -0.5288675, 1.057735, 1.057735, 1.057735),
+"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("3GMHv9xjBz/cYwc/3GMHP9xjBz/cYwe/3GMHP9xjBz/cYwc/3GMHv9xjBz/cYwe/3GMHv9xjB7/cYwc/3GMHP9xjB7/cYwe/3GMHP9xjB7/cYwc/3GMHv9xjB7/cYwe/3GMHP9xjBz/cYwc/3GMHv9xjBz/cYwe/3GMHP9xjBz/cYwe/3GMHv9xjBz/cYwc/3GMHP9xjB7/cYwc/3GMHv9xjB7/cYwe/3GMHP9xjB7/cYwe/3GMHv9xjB7/cYwc/3GMHP9xjBz/cYwc/3GMHv9xjB7/cYwc/3GMHv9xjBz/cYwc/3GMHP9xjB7/cYwc/3GMHP9xjBz/cYwe/3GMHv9xjB7/cYwe/3GMHv9xjBz/cYwe/3GMHP9xjB7/cYwe//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
+}]
 
 [node name="Test" type="Node3D" unique_id=894402557]
 
@@ -56,7 +84,9 @@ size = Vector2i(800, 650)
 render_target_update_mode = 4
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1349242048]
-transform = Transform3D(1, 0, 0, 0, 0.38091025, 0.9246121, 0, -0.9246121, 0.38091028, 0, 9.053478, 0)
+transform = Transform3D(1, 0, 0, 0, 0.3809102, 0.9246121, 0, -0.924612, 0.38091022, 0, 13.080055, 0)
+light_energy = 0.5
+light_cull_mask = 4294967287
 shadow_enabled = true
 
 [node name="Floor" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=673272313]
@@ -67,20 +97,47 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_bvec7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Floor" unique_id=236233066]
-transform = Transform3D(30, 0, 0, 0, 0.9, 0, 0, 0, 30, 0, 0, 0)
+transform = Transform3D(30, 0, 0, 0, 0.9, 0, 0, 0, 30, 0.030352592, 0.0063352585, -0.19744301)
 mesh = SubResource("BoxMesh_jofxq")
 
-[node name="TestPrism" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=260283157]
+[node name="TestMemoryPrism" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=1054265739]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/TestMemoryPrism" unique_id=1686410976]
+transform = Transform3D(7.488571, -2.8144808, 0, 2.8144808, 7.488571, 0, 0, 0, 8, -7.773186, 3.9773178, -7.6704154)
+shape = SubResource("SphereShape3D_bvec7")
+
+[node name="TestPrism" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/TestMemoryPrism" unique_id=260283157 groups=["memory"]]
 transform = Transform3D(3.7442856, -1.4072404, 0, 1.4072404, 3.7442856, 0, 0, 0, 4, -8.368563, 3.9773178, -7.6704154)
 mesh = SubResource("PrismMesh_bvec7")
 
 [node name="TestSphere" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=891463042]
 transform = Transform3D(5, -3.7252903e-08, 0, 3.7252903e-08, 5, 0, 0, 0, 5, -9.536743e-07, 6.4761734, -12.471415)
-mesh = SubResource("SphereMesh_jofxq")
+visible = false
+cast_shadow = 0
+mesh = SubResource("SphereMesh_qjeyg")
 
 [node name="TestCube" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1017984866]
 transform = Transform3D(2.4999712, -0.0120226145, 0, 0.0120226145, 2.4999712, 0, 0, 0, 2.5, 9.15867, 2.9644413, -5.3047905)
 mesh = SubResource("BoxMesh_tvexu")
 
+[node name="TestOutline" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/TestCube" unique_id=789486256]
+material_override = SubResource("StandardMaterial3D_h3xc6")
+mesh = SubResource("ArrayMesh_rnaij")
+
 [node name="Character" parent="SubViewportContainer/SubViewport" unique_id=723357428 instance=ExtResource("1_g7g4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5933541, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport" unique_id=10390080]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2.582757, -20.12687)
+texture = ExtResource("8_rnaij")
+
+[node name="MemoryObject" parent="." unique_id=575259342 instance=ExtResource("7_wtsjf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3885832, -4.924267)
+
+[node name="MemoryObject2" parent="." unique_id=596059787 instance=ExtResource("7_wtsjf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9112716, -13.753407)
+
+[node name="TestGuy" type="Sprite3D" parent="." unique_id=369600004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6473355, 4.5516224, -5.370673)
+visible = false
+texture = ExtResource("6_3qnke")

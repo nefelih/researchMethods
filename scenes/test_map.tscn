@@ -1,0 +1,127 @@
+[gd_scene format=4 uid="uid://gyrsxcepk6na"]
+
+[ext_resource type="Shader" uid="uid://bjqyg5hl5ubco" path="res://globals/shaders/test_scene.gdshader" id="1_bdpbv"]
+[ext_resource type="Texture2D" uid="uid://ck6jhxjewfn52" path="res://assets/shaders/color_palettes/1bit-monitor-glow-32x.png" id="2_ss0f2"]
+[ext_resource type="Texture2D" uid="uid://ouir54lgatc0" path="res://assets/shaders/blue_noise/blue_noise.png" id="3_kddbv"]
+[ext_resource type="PackedScene" uid="uid://cq56usnsu754w" path="res://actors/character.tscn" id="4_pw728"]
+[ext_resource type="PackedScene" uid="uid://cpsf53s2bu1pn" path="res://objects/memory_object.tscn" id="5_6gsqv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u56q5"]
+shader = ExtResource("1_bdpbv")
+shader_parameter/u_dither_tex = ExtResource("3_kddbv")
+shader_parameter/u_color_tex = ExtResource("2_ss0f2")
+shader_parameter/u_bit_depth = 64
+shader_parameter/u_contrast = 2.5
+shader_parameter/u_offset = 0.0
+shader_parameter/u_dither_size = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnaij"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tvexu"]
+material = SubResource("StandardMaterial3D_rnaij")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bdpbv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvexu"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bvec7"]
+material = SubResource("StandardMaterial3D_tvexu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3cqp"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ss0f2"]
+_surfaces = [{
+"aabb": AABB(-0.5288675, -0.5288675, -0.5288675, 1.057735, 1.057735, 1.057735),
+"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("3GMHv9xjBz/cYwc/3GMHP9xjBz/cYwe/3GMHP9xjBz/cYwc/3GMHv9xjBz/cYwe/3GMHv9xjB7/cYwc/3GMHP9xjB7/cYwe/3GMHP9xjB7/cYwc/3GMHv9xjB7/cYwe/3GMHP9xjBz/cYwc/3GMHv9xjBz/cYwe/3GMHP9xjBz/cYwe/3GMHv9xjBz/cYwc/3GMHP9xjB7/cYwc/3GMHv9xjB7/cYwe/3GMHP9xjB7/cYwe/3GMHv9xjB7/cYwc/3GMHP9xjBz/cYwc/3GMHv9xjB7/cYwc/3GMHv9xjBz/cYwc/3GMHP9xjB7/cYwc/3GMHP9xjBz/cYwe/3GMHv9xjB7/cYwe/3GMHv9xjBz/cYwe/3GMHP9xjB7/cYwe//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
+}]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bdpbv"]
+_surfaces = [{
+"aabb": AABB(-0.5288675, -0.5288675, -0.5288675, 1.057735, 1.057735, 1.057735),
+"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("3GMHv9xjBz/cYwc/3GMHP9xjBz/cYwe/3GMHP9xjBz/cYwc/3GMHv9xjBz/cYwe/3GMHv9xjB7/cYwc/3GMHP9xjB7/cYwe/3GMHP9xjB7/cYwc/3GMHv9xjB7/cYwe/3GMHP9xjBz/cYwc/3GMHv9xjBz/cYwe/3GMHP9xjBz/cYwe/3GMHv9xjBz/cYwc/3GMHP9xjB7/cYwc/3GMHv9xjB7/cYwe/3GMHP9xjB7/cYwe/3GMHv9xjB7/cYwc/3GMHP9xjBz/cYwc/3GMHv9xjB7/cYwc/3GMHv9xjBz/cYwc/3GMHP9xjB7/cYwc/3GMHP9xjBz/cYwe/3GMHv9xjB7/cYwe/3GMHv9xjBz/cYwe/3GMHP9xjB7/cYwe//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
+}]
+
+[node name="TestMap" type="Node3D" unique_id=1222892345]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1745624016]
+material = SubResource("ShaderMaterial_u56q5")
+offset_left = 29.0
+offset_top = 519.0
+offset_right = 829.0
+offset_bottom = 1169.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=624321005]
+handle_input_locally = false
+size = Vector2i(800, 650)
+render_target_update_mode = 4
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=808591219]
+transform = Transform3D(1, 0, 0, 0, 0.38091025, 0.9246121, 0, -0.9246121, 0.38091028, 0, 9.053478, 0)
+light_cull_mask = 4294967287
+shadow_enabled = true
+
+[node name="Character" parent="SubViewportContainer/SubViewport" unique_id=723357428 instance=ExtResource("4_pw728")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5933541, 0)
+
+[node name="Floor" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=302384957]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.937063, 0, -13.385171)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Floor" unique_id=2025050502]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0)
+mesh = SubResource("BoxMesh_tvexu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Floor" unique_id=501815641]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0)
+shape = SubResource("BoxShape3D_bdpbv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=704135932]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/StaticBody3D" unique_id=690654153]
+transform = Transform3D(0.5, 0, 0, 0, 12.971234, 0, 0, 0, 20, -4.6784153, 7.1090374, -7.743076)
+mesh = SubResource("BoxMesh_bvec7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/StaticBody3D/MeshInstance3D" unique_id=959021606]
+material_override = SubResource("StandardMaterial3D_p3cqp")
+mesh = SubResource("ArrayMesh_ss0f2")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/StaticBody3D" unique_id=568506038]
+transform = Transform3D(0.5, 0, 0, 0, 12.971234, 0, 0, 0, 20, 13.5012455, 7.1090374, -7.743076)
+mesh = SubResource("BoxMesh_bvec7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/StaticBody3D" unique_id=1615299410]
+transform = Transform3D(-2.1855694e-08, 0, 20, 0, 12.971234, 0, -0.5, 0, -8.742278e-07, -4.6784153, 7.1090374, -7.743076)
+mesh = SubResource("BoxMesh_bvec7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/StaticBody3D/MeshInstance3D2" unique_id=63715114]
+mesh = SubResource("ArrayMesh_bdpbv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/StaticBody3D" unique_id=864230057]
+transform = Transform3D(-2.1855694e-08, 0, 20, 0, 12.971234, 0, -0.5, 0, -8.742278e-07, 13.418024, 7.1090374, 1.6161189)
+mesh = SubResource("BoxMesh_bvec7")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/StaticBody3D" unique_id=1731381869]
+transform = Transform3D(-2.1855694e-08, 0, 20, 0, 12.971234, 0, -0.5, 0, -8.742278e-07, 13.418024, 7.1090374, -13.662245)
+mesh = SubResource("BoxMesh_bvec7")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/StaticBody3D" unique_id=264874255]
+transform = Transform3D(-2.1855694e-08, 0, 20, 0, 12.971234, 0, -0.5, 0, -8.742278e-07, 5.8154583, 7.1090374, -17.556488)
+mesh = SubResource("BoxMesh_bvec7")
+
+[node name="MemoryObject" parent="." unique_id=596059787 instance=ExtResource("5_6gsqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3885832, -4.924267)

@@ -4,12 +4,12 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_tvexu"]
 
-[node name="MemoryObject" type="Node3D" unique_id=1724018439 groups=["memory"]]
+[node name="MemoryObject" type="StaticBody3D" unique_id=596059787 groups=["memory"]]
+collision_layer = 2
+collision_mask = 2
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1967825252]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1361814800]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1361814800]
 shape = SubResource("SphereShape3D_jofxq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=20523514]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=20523514]
 mesh = SubResource("SphereMesh_tvexu")
