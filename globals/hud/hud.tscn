@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://bngosrkjjvfo3"]
 
+[ext_resource type="Script" uid="uid://4dojkifs87f4" path="res://globals/hud/hud.gd" id="1_7fs6p"]
+[ext_resource type="Texture2D" uid="uid://b5ypyjd66ecwe" path="res://assets/hud/hud.png" id="2_ivgah"]
+
 [node name="Hud" type="CanvasLayer" unique_id=339379080]
+script = ExtResource("1_7fs6p")
+
+[node name="Hud" type="Sprite2D" parent="." unique_id=749464416]
+position = Vector2(800, 600)
+texture = ExtResource("2_ivgah")
+
+[node name="Stats" type="ProgressBar" parent="." unique_id=1887025835]
+offset_left = 1088.0
+offset_top = 970.0
+offset_right = 1565.0
+offset_bottom = 1024.0
+value = 100.0

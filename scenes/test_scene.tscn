@@ -1,13 +1,14 @@
 [gd_scene format=4 uid="uid://rsa1h4kwv25w"]
 
 [ext_resource type="PackedScene" uid="uid://cq56usnsu754w" path="res://actors/character.tscn" id="1_g7g4h"]
+[ext_resource type="PackedScene" uid="uid://bngosrkjjvfo3" path="res://globals/hud/hud.tscn" id="1_h3xc6"]
 [ext_resource type="Shader" uid="uid://bjqyg5hl5ubco" path="res://globals/shaders/test_scene.gdshader" id="2_j8ivh"]
 [ext_resource type="Texture2D" uid="uid://ouir54lgatc0" path="res://assets/shaders/blue_noise/blue_noise.png" id="3_7ddre"]
 [ext_resource type="Texture2D" uid="uid://ck6jhxjewfn52" path="res://assets/shaders/color_palettes/1bit-monitor-glow-32x.png" id="3_nd71p"]
 [ext_resource type="Shader" uid="uid://d4h5fu557dwcd" path="res://globals/shaders/gradient.gdshader" id="4_qjeyg"]
 [ext_resource type="Texture2D" uid="uid://cnj2tj8gfyrlq" path="res://assets/test_items/guy.jpg" id="6_3qnke"]
 [ext_resource type="PackedScene" uid="uid://cpsf53s2bu1pn" path="res://objects/memory_object.tscn" id="7_wtsjf"]
-[ext_resource type="Texture2D" uid="uid://fxgpddbcrfpt" path="res://assets/memory_outline.png" id="8_rnaij"]
+[ext_resource type="Texture2D" uid="uid://fxgpddbcrfpt" path="res://assets/test_items/memory_outline.png" id="8_rnaij"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g7g4h"]
 shader = ExtResource("2_j8ivh")
@@ -71,16 +72,18 @@ _surfaces = [{
 
 [node name="Test" type="Node3D" unique_id=894402557]
 
+[node name="Hud" parent="." unique_id=339379080 instance=ExtResource("1_h3xc6")]
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1982732916]
 material = SubResource("ShaderMaterial_g7g4h")
-offset_left = 29.0
-offset_top = 519.0
-offset_right = 829.0
-offset_bottom = 1169.0
+offset_left = 35.0
+offset_top = 450.0
+offset_right = 915.0
+offset_bottom = 1165.0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=816030517]
 handle_input_locally = false
-size = Vector2i(800, 650)
+size = Vector2i(880, 715)
 render_target_update_mode = 4
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1349242048]
